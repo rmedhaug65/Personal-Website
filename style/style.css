@@ -16,6 +16,10 @@ body {
 
 }
 
+h1 {
+  font-size: 28px;
+}
+
 .post-title {
   font-family: Helvetica;
   font-size: 18px;
