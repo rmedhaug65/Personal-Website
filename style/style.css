@@ -16,7 +16,7 @@ body {
 
 }
 
-#posts {
+#posts a {
   font-family: Helvetica;
   font-size: 20px;
   color: #0864c7;
