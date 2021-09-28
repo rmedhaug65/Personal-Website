@@ -4,7 +4,7 @@
 // const Header = () => {
 //     return (
 //         <header className="header">
-//             <h1><Icon icon={locationIcon} /> Wildfire Tracker (Powered By NASA)</h1>
+//             <h1><Icon icon={locationIcon} /> weather station</h1>
 //         </header>
 //     )
 // }
