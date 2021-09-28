@@ -1,21 +1,23 @@
-function initMap(){
 
-    // Map option
 
-    var options = {
-        center: {lat: 38.3460 , lng:-0.4907 },
-        zoom: 10
-    }
 
-    //New Map
-    map = new google.maps.Map(document.getElementById("map"),options)
+let map;
 
-    //listen for click on map location
+function initMap() {
 
-    google.maps.event.addListener(map, "click", (event) => {
-        //add Marker
-        addMarker({location:event.latLng});
-    })
+  var options = {
+    center: { lat: 45.8320, lng: -97.2625 },
+    zoom: 12,
+    mapTypeId: 'hybrid'
+  }
+
+  map = new google.maps.Map(document.getElementById("map"),options)
+
+
+  google.maps.event.addListener(map, "mouseover", (event) => {
+  	addMarker
+  })
+
 
 
 
@@ -40,13 +42,13 @@ function initMap(){
 
     //Add Markers to Array
 
-    let MarkerArray = [ {location:{lat: 37.9922, lng: -1.1307}, 
-        imageIcon: "https://img.icons8.com/nolan/2x/marker.png", 
-        content: `<h2>Murcia City</h2>`},
+    let MarkerArray = [ {
+    	location:{lat: 45.8320, lng: -97.2625}, 
+        content: `<h2>The Ranch</h2>`},
 
-        {location:{lat: 39.4699, lng: -0.3763}},
-
-        {location:{lat: 38.5411, lng: -0.1225},content: `<h2>Benidorm City</h2>` }
+        {
+        	location:{lat: 45.8045, lng: -97.2583},
+        	content: '<h2>Rocky 40</h2>'}
 
 
 
@@ -83,6 +85,7 @@ function initMap(){
     
     marker.addListener("mouseover", () =>{
         detailWindow.open(map, marker);
+
     })
 }
 
