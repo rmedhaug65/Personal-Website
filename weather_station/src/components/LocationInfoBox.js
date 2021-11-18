@@ -3,7 +3,7 @@ const LocationInfoBox = ({ info }) => {
         <div className="location-info">
             <h2>Weather Station Info</h2>
             <ul>
-    <li>Time: <strong>{ info.time } </strong></li>
+    <li>Last Updated: <strong>{ info.time } </strong></li>
     <li>ID: <strong>{ info.id }</strong></li>
     <li>Temp: <strong>{ info.temperature }</strong></li>
     <li>Humidity: <strong>{ info.humidity }</strong></li>
