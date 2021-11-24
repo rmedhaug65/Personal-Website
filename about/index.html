@@ -1,0 +1,43 @@
+<html><head>
+  <link rel="stylesheet" type="text/css" href="/style/style.css">
+  <meta charset="utf-8">
+  <title>About - Ryan Medhaug</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WL0BRL1MBC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WL0BRL1MBC');
+</script>
+</head>
+<body>
+<p><span id="datetime"></span></p>
+<div id="menu">
+<span class="title">Ryan Medhaug</span>
+<ul>
+  <li><a href="/about">About</a></li>
+  <li><a href="/blog">Blog (kinda)</a></li>
+  <li><a href="/books">Books</a></li>
+  <li><a href="/projects">Projects</a></li>
+  <li><a href="/frameworks">Frameworks</a></li>
+  <li><a href="/weather_station">Weather Station</a></li>
+</ul>
+</div>
+<div id="left">&nbsp;</div>
+<div id="content">
+	<h1>About</h1>
+
+	<p>
+		I am currently working as an analyst/assistant portfolio manager at Stonebridge Capital in the Twin Cities. I grew up on my family's farm in northeast South Dakota outside of a small town - Veblen (pop. 531). After I graduated from secondary school, I moved to Albuquerque to play on the golf team at the University of New Mexico. I eventually decided that I did not wish to pursue golf as a profession and left the golf program to focus on learning about investing and technology. Following university, I got a job at Stonebridge Capital, where I am now, focussing on analyzing various sectors of the market, primarily technology, and the companies within those sectors. 
+	</p>
+
+	<p>
+		I have always wanted to create my own website and after getting somewhat familiar with HTML after some web scraping, decided to try to hack something together. The purpose is to have an outlet to discuss ideas I am thinking about, books I am reading, and projects I am working on. Writing has the alluring effect of making you distill your ideas down to the purest form, with the consequence being a focus on first principles. My hope is that this website creates an incentive for me to increase my idea velocity, deepen my thought while focussing on first principles.
+	</p>
+<script>
+  var dt = new Date();
+document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2))+":"+ (("0"+dt.getSeconds()).slice(-2));
+</script>
+
+</body></html>
