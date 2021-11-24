@@ -26,17 +26,22 @@
 </div>
 <div id="left">&nbsp;</div>
 <div id="content">
+  <h1>Update</h1>
+
+      <p>
+        I have yet to move my hosting for this website from Github to S3 and CloudFront. In the meantime please go to 
+        <a href="https://www.ryanmedhaug.io">https://www.ryanmedhaug.io/</a> to check out my new weather station project.
+      </p>
   
-  <p>
-    I have yet to move my hosting for this website to S3 and CloudFront, but in the meantime go to 
-    <a href="https://www.ryanmedhaug.io">https://www.ryanmedhaug.io/</a> to check out my new weather station project.
-  </p>
-
-  <p>
-    For the project, I am using a LILYGO ESP32 microcontroller and DHT11 sensor to measure temperature and humidity data, send the data to Amazon's RDS, then using AWS's API gateway and Lambda to pull the data into a webpage. For the webpage, I am using the pulled sensor data in combination with Google Map's API. I plan on adding more functionality to the website as my free time permits :) 
-  </p>
-
-
+      <p>
+        The purpose of the project was to get more familiar with AWS, IoT devices, and what building a pipeline looks like for developers. I plan on building out the website further and possibly look at adding an iOS/Android app. I would like to get more familiar with orchestrating containers and the monitoring and security surrounding them. 
+      </p>
+  
+      <p>
+        For the project, I am using a LILYGO ESP32 microcontroller and a DHT11 sensor to measure temperature and humidity data. I am sending the data to Amazon's SQL database, RDS, then using API gateway, in combination with Lambda, to pull the data from RDS into the webpage. For the webpage, the sensor data that is getting pulled combines with Google Map's API to plot the coordinates and display the data. Unfortunately, it is still a bit clunky as I work on my JS and React skills. I do plan on adding more functionality as my free time permits :) 
+      </p>
+  
+</div>
 <script>
   var dt = new Date();
 document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2))+":"+ (("0"+dt.getSeconds()).slice(-2));
