@@ -25,12 +25,15 @@ h1 {
   font-size: 18px;
   color: #0864c7;
   margin-top: 75px;
+  padding-top: 100px;
+  border: 500px;
   }
 
 .post-date {
   font-family: Helvetica;
   font-size: 14px;
   margin-top: 100px;
+  border: 500px;
   }
 
 #menu {
