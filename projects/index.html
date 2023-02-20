@@ -28,15 +28,20 @@
 <div id="content">
   <h1>Automated Apartment Scraper</h1>
   <p>
-    
+    This idea came from looking to change apartments in my current building. Currently there is no way to get notified when a unit you would like to look at becomes available. My idea was to build a webscraper that would scrape the available units from my building's website, then notify me once a unit became availalbe. 
   </p>
 
   <p>
-    The purpose of the project was to get more familiar with AWS, IoT devices, and what building a "pipeline" looks like for developers. I plan on building out the website further and possibly adding an iOS/Android app. I would also at some stage like to get more familiar with orchestrating containers and the monitoring and security surrounding them, so a web app might be in the works at some stage down the road. 
+    The first was to set up the webscraper, then once the scraper was in place, set up a way to alert me. In this case, I used AWS's SNS which would send an SMS text message when a unit became available. 
+  </p>
+
+  <h2>Building a Webscraper</h2>
+  <p>
+    My first step to building a webscraper wass to find the page I wanted to scrape. In my case it the listing of all available <a href="https://www.365nicollet.com/availableunits.aspx?myOlePropertyId=1347435">apartments</a>. 
   </p>
 
   <p>
-    For the project, I am using a LILYGO ESP32 microcontroller and a DHT11 sensor to measure temperature and humidity data. I am sending the data to Amazon's SQL database, RDS, then using API gateway, in combination with Lambda, to pull the data from RDS into the webpage. For the webpage, the sensor data that is getting pulled combines with Google Map's API to plot the coordinates and display the data. Unfortunately, it is still a bit clunky as I work on my JS and React skills. I do plan on adding more functionality as my free time permits :)
+    <img width='700' height='500' src="ryanmedhaug.con/website.png">
   </p>
 
 </div>
@@ -45,7 +50,6 @@
 </div>
 <div id="left">&nbsp;</div>
 <div id="content">
-	<h1>Coming Soon....</h1>
 
 <script>
   var dt = new Date();
