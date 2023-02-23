@@ -19,7 +19,7 @@
   <li><a href="/about">About</a></li>
   <li><a href="/blog">Blog (kinda)</a></li>
   <li><a href="/books">Books</a></li>
-  <li><a href="/brojects">Projects</a></li>
+  <li><a href="/projects">Projects</a></li>
   <li><a href="/frameworks">Frameworks</a></li>
   <li><a href="/weather_station">Weather Station</a></li>
 </ul>
@@ -29,15 +29,30 @@
   <h1>Update</h1>
   <p>
     I have yet to move my hosting for this website from Github to S3 and CloudFront. In the meantime, please go to my new
-    <a href="https://www.ryanmedhaug.io">website</a> to check out the weather station project.
+    <a href="https://www.ryanmedhaug.io">website</a> to check out my weather station project.
   </p>
 
+  <p>
+    The goal of the project is to be able to remotely measure rain and wind speed in any random field. Typically, one places rain gauges in various areas, then periodically checks them. My idea was to create a digital rain gauge that I would be able to check on my phone. The project isn't quite yet completed, but so far I am able to measure temperature and humidity remotely on my <a href="https://www.ryanmedhaug.io">website</a>.  
+  </p>
+
+  <p>
+    The way this happens is that I have programmed an ESP32 microcontroller, using Arudino's IDE, to measure temperatuer and humidity via a DHT11 sensor, along with latitude and longitude via GPS, then upload that data into a database at AWS. Once the data is uploaded, the website pulls the most recent data from the database for each unique sensor, then plots it on the map using the latitude and longitude of that specific sensor. 
+  </p>
+    
   <p>
     The purpose of the project was to get more familiar with AWS, IoT devices, and what building a "pipeline" looks like for developers. I plan on building out the website further and possibly adding an iOS/Android app. I would also at some stage like to get more familiar with orchestrating containers and the monitoring and security surrounding them, so a web app might be in the works at some stage down the road. 
   </p>
 
   <p>
-    For the project, I am using a LILYGO ESP32 microcontroller and a DHT11 sensor to measure temperature and humidity data. I am sending the data to Amazon's SQL database, RDS, then using API gateway, in combination with Lambda, to pull the data from RDS into the webpage. For the webpage, the sensor data that is getting pulled combines with Google Map's API to plot the coordinates and display the data. Unfortunately, it is still a bit clunky as I work on my JS and React skills. I do plan on adding more functionality as my free time permits :)
+    Here is a picture of my little beauty :') - the casing was designed in Fusion 360 to fit the dimensions of the solar panel, then printed on my 3D printer. I have been having some issues with maintaining a WiFi connection as the solar panel charges the battery, so I ahve tried attaching a capacitor to maintain the voltage supplying the ESP32. Unfortunately, my electrical enginnering skills are pretty subpar (an understatement), so I apologize in advance if the capacitor is redundant or doesn't make sense! 
+
+    <img width='600' height='400' src="sensor.jpg">
+  </p>
+
+
+  <p>
+    For the project, I am using a LILYGO ESP32 microcontroller and a DHT11 sensor to measure temperature and humidity data. I am sending the data to Amazon's SQL database (RDS), then using API gateway, in combination with Lambda, to pull the data from RDS into my webpage. For the webpage, the sensor data that is getting pulled combines with Google Map's API to plot the coordinates and display the data. 
   </p>
 
 </div>
