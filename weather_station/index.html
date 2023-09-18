@@ -28,24 +28,23 @@
 <div id="content">
   <h1>Update</h1>
   <p>
-    I have yet to move my hosting for this website from Github to S3 and CloudFront. In the meantime, please go to my new
-    <a href="https://www.ryanmedhaug.io">website</a> to check out my weather station project.
+    TheWeatherFrog iOS app is now in beta testing!! Reach out to me if you'd like to demo it. I plan on submitting it to the app store/play store before Halloween. The <a href="https://www.ryanmedhaug.io">website</a> is also available, with limited functionality. 
   </p>
 
   <p>
-    The goal of the project is to be able to remotely measure rain and wind speed in any random field. Typically, one places rain gauges in various areas, then periodically checks them. My idea was to create a digital rain gauge that I would be able to check on my phone. The project isn't quite yet completed, but so far I am able to measure temperature and humidity remotely on my <a href="https://www.ryanmedhaug.io">website</a>.  
+    The goal of the project is to be able to remotely measure rain and wind speed in any random field. Typically, we place rain gauges in various areas, then periodically checks them. My idea was to create a digital rain gauge that I would be able to check on my phone.
   </p>
 
   <p>
-    The way this happens is that I have programmed an ESP32 microcontroller, using Arudino's IDE, to measure temperatuer and humidity via a DHT11 sensor, along with latitude and longitude via GPS, then upload that data into a database at AWS. Once the data is uploaded, the website pulls the most recent data from the database for each unique sensor, then plots it on the map using the latitude and longitude of that specific sensor. 
+    The way this happens is that I have programmed an ESP32 microcontroller, using Arudino's IDE, to measure temperature and humidity via a DHT11 sensor (which has now been upgraded to a DS18B20 which is more commerical grade) along with latitude and longitude via GPS. That data is then uploaded into a database at AWS eitehr via WiFi or LTE. Once the data is uploaded, the website pulls the data from the database for each unique sensor.
   </p>
     
   <p>
-    The purpose of the project was to get more familiar with AWS, IoT devices, and what building a "pipeline" looks like for developers. I plan on building out the website further and possibly adding an iOS/Android app. I would also at some stage like to get more familiar with orchestrating containers and the monitoring and security surrounding them, so a web app might be in the works at some stage down the road. 
+    The purpose of the project was to get more familiar with creating a product and building it from end to end (i.e. from the hardware to the software) In particular, to get familiar with building iOS & Android applications, programming electronics, and all the backend engineering to enable it. 
   </p>
 
   <p>
-    Here is a picture of my little beauty :') - the casing was designed in Fusion 360 to fit the dimensions of the solar panel, then printed on my 3D printer. I have been having some issues with maintaining a WiFi connection as the solar panel charges the battery, so I ahve tried attaching a capacitor to maintain the voltage supplying the ESP32. Unfortunately, my electrical enginnering skills are pretty subpar (an understatement), so I apologize in advance if the capacitor is redundant or doesn't make sense! 
+    Here is a picture of the station's "brains" minus the wind direction, anemometer and rain gauge instruments - the casing was designed in Fusion 360 to fit the dimensions of the solar panel, then printed on my 3D printer with PLA filament. I plan on switching to PETG filament in the future, which should help it brave the outdoor elements. The next phase is to 
 
     <img width='600' height='400' src="/sensor.jpeg">
     
@@ -54,7 +53,7 @@
 
 
   <p>
-    For the project, I am using a LILYGO ESP32 microcontroller and a DHT11 sensor to measure temperature and humidity data. I am sending the data to Amazon's SQL database (RDS), then using API gateway, in combination with Lambda, to pull the data from RDS into my webpage. For the webpage, the sensor data that is getting pulled combines with Google Map's API to plot the coordinates and display the data. 
+    For the project, I am using a LILYGO ESP32 microcontroller and a DS18B20 sensor to measure temperature and humidity data, along with weather instruments that can be found <a href="https://www.sparkfun.com/products/15901">here</a>. I am sending the data to Amazon's SQL database (RDS), then using API gateway, in combination with Lambda, to create API endpoints for my app to pull the data from. Additionally, I am using API's from OpenWeatherMap (weather data/forecasts), Google Places (geocoding/autocomplete), MapBox (maps) & RainViewer (radar) in combination with Firebase (user registration/sign in authentication, saving profile details, etc.) 
   </p>
 
 </div>
