@@ -33,56 +33,54 @@
   <div id="left" aria-hidden="true">&nbsp;</div>
 
   <div id="content">
-    <h1>Weather Station & App</h1>
+  <h1>Update</h1>
 
-    <p>
-      <strong>TheWeatherFrog</strong> iOS app is now in beta testing! Reach out if you'd like a demo. I plan to submit it to the App Store / Play Store by Halloween. The
-      <a href="https://www.ryanmedhaug.io">website</a> is also live with limited functionality.
-    </p>
+  <p>
+    TheWeatherFrog iOS app is now in beta testing!! Reach out to me if you'd like to demo it. I plan on submitting it to the app store/play store by Halloween. The <a href="https://www.ryanmedhaug.io/">website</a> is also available, with limited functionality.
+  </p>
 
-    <h2>What I'm building</h2>
-    <p>
-      The goal is to remotely measure rainfall and wind speed in any given field. Instead of placing manual rain gauges in multiple fields and checking them periodically, I'm creating a digital station you can monitor from your phone in real time.
-    </p>
+  <p>
+    The goal of the project is to be able to remotely measure rain and wind speed in any given field. Typically, we place rain gauges in various fields, then periodically check them. My idea was to create a digital rain gauge that we would be able to continuously monitor on our phones.
+  </p>
 
-    <h2>How it works (hardware & firmware)</h2>
-    <p>
-      I'm using a <strong>LILYGO ESP32</strong> microcontroller paired with a <strong>SIM7000G LTE</strong> module. Firmware written in the <strong>Arduino IDE</strong> reads a <strong>DS18B20</strong> temperature sensor plus weather instruments—anemometer (wind speed), wind vane (direction), and tipping‑bucket rain gauge—from the
-      <a href="https://www.sparkfun.com/products/15901">SparkFun weather kit</a>. The station also captures GPS latitude/longitude. Data is sent to AWS over Wi‑Fi or LTE.
-    </p>
+  <p>
+    The way this happens is that I have programmed an ESP32 microcontroller, using Arudino's IDE, to measure temperature, rain fall, wind direction, wind speed, latitude and longitude. The data is then uploaded into an RDS database at AWS via WiFi or LTE.
+  </p>
 
-    <h2>Data pipeline & app</h2>
-    <p>
-      Measurements land in <strong>Amazon RDS (SQL)</strong>. I use <strong>API Gateway</strong> with <strong>AWS Lambda</strong> to expose clean API endpoints that the app and website query. The app also integrates <strong>OpenWeatherMap</strong> (forecasts), <strong>Google Places</strong> (geocoding/autocomplete), <strong>Mapbox</strong> (maps), and <strong>RainViewer</strong> (radar). <strong>Firebase</strong> handles user registration, sign‑in, and profile details.
-    </p>
+  <p>
+    The purpose of the project was to get more familiar with creating a product and building it from end to end (i.e. from the hardware to the software) In particular, to get familiar with building iOS & Android applications, programming electronics, and all the backend engineering to enable it.
+  </p>
 
-    <h2>Product build & enclosure</h2>
-    <p>
-      Here's the station's “brains” (minus the wind vane, anemometer, and rain gauge). I designed the enclosure in <strong>Fusion 360</strong> to match the solar panel footprint and printed it on my 3D printer in <strong>PETG</strong> for outdoor durability. I'm currently designing a custom <strong>PCB</strong> and 3D‑modeling the production enclosure. Long‑term, the goal is an injection‑molded product with a board tailored to the station's needs.
-    </p>
+  <p>
+    Here is a picture of the station's "brains" minus the wind direction, anemometer and rain gauge instruments - the casing was designed in Fusion 360 to fit the dimensions of the solar panel, then printed on my 3D printer with PTEG filament. I am currently in the process of designing a printed circuit board (PCB) and 3D modeling the casing/parts that it will go into. The ultimate goal is to have an injection mold of the product and sensors with a custom PCB designed to fit the weather station's unique needs.
+  </p>
 
-    <figure>
-      <img width="600" height="400" src="/sensor.jpeg" alt="Weather station controller board and enclosure interior." />
-      <figcaption>Controller and enclosure interior.</figcaption>
-    </figure>
+  <figure>
+    <img width="500" height="500" src="/sensor2.jpg" alt="LILYGO ESP32 board with wiring and modules mounted." />
+    <figcaption>LILYGO ESP32 + wiring.</figcaption>
+  </figure>
 
-    <figure>
-      <img width="500" height="500" src="/sensor2.jpg" alt="LILYGO ESP32 board with wiring and modules mounted." />
-      <figcaption>LILYGO ESP32 + wiring.</figcaption>
-    </figure>
+  <figure>
+    <img width="500" height="500" src="/weather_station/station.jpg" alt="Assembled weather station mounted outdoors with solar panel." />
+    <figcaption>Assembled outdoor station.</figcaption>
+  </figure>
 
-    <figure>
-      <img width="500" height="500" src="/weather_station/station.jpg" alt="Assembled weather station mounted outdoors with solar panel." />
-      <figcaption>Assembled outdoor station.</figcaption>
-    </figure>
+  <figure>
+    <img width="500" height="500" src="/weather_station/programming.jpg" alt="Programming the weather station hardware." />
+    <figcaption>Me programming the station.</figcaption>
+  </figure>
 
-    <h2>Why I'm doing it</h2>
-    <p>
-      I wanted an end‑to‑end product build—from hardware to firmware, cloud, and mobile apps. This project has let me learn iOS & Android development, embedded electronics, and the backend engineering needed to make it all work together.
-    </p>
-  </div>
+  <figure>
+    <img width="440" height="956" src="/weather_station/App.jpg" alt="iOS app home screen for TheWeatherFrog." />
+    <figcaption>iOS app home screen.</figcaption>
+  </figure>
 
-  <script>
+  <p>
+    For the project, I am using a LILYGO ESP32 microcontroller with a SIM7000G LTE module, a DS18B20 sensor to measure temperature, along with weather instruments that can be found <a href="https://www.sparkfun.com/products/15901">here</a>. I am sending the data to Amazon's SQL database (RDS), then using API gateway, in combination with Lambda, to create API endpoints for my app to pull the data from. Additionally, I am using API's from OpenWeatherMap (weather data/forecasts), Google Places (geocoding/autocomplete), MapBox (maps) & RainViewer (radar) in combination with Firebase (user registration/sign in authentication, saving profile details, etc.)
+  </p>
+
+</div>
+<script>
     // Simple timestamp display
     var dt = new Date();
     document.getElementById('datetime').textContent = (
